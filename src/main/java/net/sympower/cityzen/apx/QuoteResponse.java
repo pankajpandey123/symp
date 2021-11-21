@@ -2,43 +2,45 @@ package net.sympower.cityzen.apx;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import net.sympower.cityzen.apx.pojo.Quote;
 
 public class QuoteResponse {
-	private List<Quote> quote;
+	@JsonProperty("quote")
+	private List<Quote> quotes;
 
 	public QuoteResponse() {
 	}
 
 	public QuoteResponse(List<Quote> quotes) {
-		super();
-		this.quote = quotes;
+ 		this.quotes = quotes;
 	}
 
 	/**
 	 * @return the quote
 	 */
 	public List<Quote> getQuotes() {
-		return quote;
+		return quotes;
 	}
 
 	/**
-	 * @param quote the quote to set
+	 * @param quotes the quote to set
 	 */
 	public void setQuotes(List<Quote> quotes) {
-		this.quote = quotes;
+		this.quotes = quotes;
 	}
 
 	@Override
 	public String toString() {
-		return "QuoteResponse [quote=" + quote + "]";
+		return "QuoteResponse [quotes=" + quotes + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((quote == null) ? 0 : quote.hashCode());
+		result = prime * result + ((quotes == null) ? 0 : quotes.hashCode());
 		return result;
 	}
 
@@ -51,10 +53,10 @@ public class QuoteResponse {
 		if (getClass() != obj.getClass())
 			return false;
 		QuoteResponse other = (QuoteResponse) obj;
-		if (quote == null) {
-			if (other.quote != null)
+		if (quotes == null) {
+			if (other.quotes != null)
 				return false;
-		} else if (!quote.equals(other.quote))
+		} else if (!quotes.equals(other.quotes))
 			return false;
 		return true;
 	}

@@ -3,15 +3,18 @@ package net.sympower.cityzen.apx.pojo;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Quote {
 	private String market;
-	private Date date_applied;
+	@JsonProperty("date_applied")
+	private Date dateApplied;
 	private List<QuoteLabel> values;
 
-	public Quote(String market, Date date_applied, List<QuoteLabel> quotLabels) {
+	public Quote(String market, Date dateApplied, List<QuoteLabel> quotLabels) {
 		 
 		this.market = market;
-		this.date_applied = date_applied;
+		this.dateApplied = dateApplied;
 		this.values = quotLabels;
 	}
 
@@ -22,7 +25,7 @@ public class Quote {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((date_applied == null) ? 0 : date_applied.hashCode());
+		result = prime * result + ((dateApplied == null) ? 0 : dateApplied.hashCode());
 		result = prime * result + ((market == null) ? 0 : market.hashCode());
 		result = prime * result + ((values == null) ? 0 : values.hashCode());
 		return result;
@@ -37,10 +40,10 @@ public class Quote {
 		if (getClass() != obj.getClass())
 			return false;
 		Quote other = (Quote) obj;
-		if (date_applied == null) {
-			if (other.date_applied != null)
+		if (dateApplied == null) {
+			if (other.dateApplied != null)
 				return false;
-		} else if (!date_applied.equals(other.date_applied))
+		} else if (!dateApplied.equals(other.dateApplied))
 			return false;
 		if (market == null) {
 			if (other.market != null)
@@ -57,7 +60,7 @@ public class Quote {
 
 	@Override
 	public String toString() {
-		return "Quote [market=" + market + ", date_applied=" + date_applied + ", values=" + values + "]";
+		return "Quote [market=" + market + ", dateApplied=" + dateApplied + ", values=" + values + "]";
 	}
 
 	/**
@@ -77,15 +80,15 @@ public class Quote {
 	/**
 	 * @return the date_applied
 	 */
-	public Date getDate_applied() {
-		return date_applied;
+	public Date getDateApplied() {
+		return dateApplied;
 	}
 
 	/**
 	 * @param date_applied the date_applied to set
 	 */
-	public void setDate_applied(Date date_applied) {
-		this.date_applied = date_applied;
+	public void setDate_applied(Date dateApplied) {
+		this.dateApplied = dateApplied;
 	}
 
 	/**
